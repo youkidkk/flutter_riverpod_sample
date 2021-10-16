@@ -1,0 +1,37 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "flutter",
+      "command": "flutter",
+      "args": ["build", "apk"],
+      "group": "build",
+      "problemMatcher": [],
+      "label": "flutter: flutter build apk"
+    },
+    {
+      "type": "flutter",
+      "command": "flutter",
+      "args": ["pub", "get"],
+      "group": "build",
+      "problemMatcher": [],
+      "label": "flutter: flutter pub get"
+    },
+    {
+      "type": "flutter",
+      "command": "flutter",
+      "args": ["clean"],
+      "group": "build",
+      "problemMatcher": [],
+      "label": "flutter: flutter clean"
+    },
+    {
+      "type": "flutter",
+      "command": "flutter",
+      "args": ["pub", "run", "build_runner", "build"],
+      "group": "build",
+      "problemMatcher": [],
+      "label": "flutter: flutter pub build_runner"
+    }
+  ]
+}
