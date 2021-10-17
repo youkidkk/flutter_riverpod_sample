@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_riverpod_sample/counter_state.dart';
 import 'package:flutter_riverpod_sample/counter_state_notifier.dart';
+import 'package:flutter_riverpod_sample/sample_future_provider.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 final counterStateNotifierProvider =
@@ -35,6 +36,8 @@ class MyHomePage extends HookWidget {
     final counterState = useProvider(counterStateNotifierProvider);
     final counterStateNotifier =
         useProvider(counterStateNotifierProvider.notifier);
+
+    final sampleFuture = useProvider(sampleFutureProvider);
 
     return Scaffold(
       appBar: AppBar(
@@ -86,6 +89,18 @@ class MyHomePage extends HookWidget {
                 ),
               ],
             ),
+            Text(
+              'FutureProvider',
+              style: Theme.of(context).textTheme.headline3,
+            ),
+            sampleFuture.when(
+              data: (result) => Text(
+                result,
+                style: Theme.of(context).textTheme.headline4,
+              ),
+              loading: () => const CircularProgressIndicator(),
+              error: (_error, _st) => const Text('Error'),
+            )
           ],
         ),
       ),
