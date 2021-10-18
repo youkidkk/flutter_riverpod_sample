@@ -54,17 +54,26 @@ class MyHomePage extends HookWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ElevatedButton(
+                OutlinedButton(
                   onPressed: counterStateNotifier.decrement,
-                  child: const Text('－'),
+                  child: Text(
+                    '－',
+                    style: Theme.of(context).textTheme.headline6,
+                  ),
                 ),
-                Text(
-                  '${counterState.value}',
-                  style: Theme.of(context).textTheme.headline4,
+                Container(
+                  margin: const EdgeInsets.only(left: 20.0, right: 20.0),
+                  child: Text(
+                    '${counterState.value}',
+                    style: Theme.of(context).textTheme.headline4,
+                  ),
                 ),
-                ElevatedButton(
+                OutlinedButton(
                   onPressed: counterStateNotifier.increment,
-                  child: const Text('＋'),
+                  child: Text(
+                    '＋',
+                    style: Theme.of(context).textTheme.headline6,
+                  ),
                 ),
               ],
             ),
@@ -75,17 +84,26 @@ class MyHomePage extends HookWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ElevatedButton(
+                OutlinedButton(
                   onPressed: counterStateNotifier.decrementStep,
-                  child: const Text('－'),
+                  child: Text(
+                    '－',
+                    style: Theme.of(context).textTheme.headline6,
+                  ),
                 ),
-                Text(
-                  '${counterState.step}',
-                  style: Theme.of(context).textTheme.headline4,
+                Container(
+                  margin: const EdgeInsets.only(left: 20.0, right: 20.0),
+                  child: Text(
+                    '${counterState.step}',
+                    style: Theme.of(context).textTheme.headline4,
+                  ),
                 ),
-                ElevatedButton(
+                OutlinedButton(
                   onPressed: counterStateNotifier.incrementStep,
-                  child: const Text('＋'),
+                  child: Text(
+                    '＋',
+                    style: Theme.of(context).textTheme.headline6,
+                  ),
                 ),
               ],
             ),
